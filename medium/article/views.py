@@ -7,8 +7,8 @@ from .models import Article
 from .serializers import ArticleSerializer
 import json
 def index(req):
-    your_json = [{'key1': "value", 'key2': "value"}]
-    return HttpResponse(your_json, 'application/json')
+
+    return JsonResponse({"key1": "value1", "key2": "value2"})
 
 class ArticleView(APIView):
     def get(self, request, pk=None):
