@@ -1,9 +1,14 @@
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
+from django.http import JsonResponse
+from django.http import HttpResponse
 from .models import Article
 from .serializers import ArticleSerializer
+import json
+def index(req):
+    your_json = [{'key1': "value", 'key2': "value"}]
+    return HttpResponse(your_json, 'application/json')
 
 class ArticleView(APIView):
     def get(self, request, pk=None):
